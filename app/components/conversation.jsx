@@ -43,27 +43,26 @@ export function Conversation() {
   }, [conversation]);
 
   return (
-    <div className="flex flex-col items-center gap-4">
-      <div className="flex gap-2">
+    <div className="conversation">
+      <div className="controls">
         <button
           onClick={startConversation}
           disabled={conversation.status === 'connected'}
-          className="px-4 py-2 bg-blue-500 text-white rounded disabled:bg-gray-300"
+          className="btn btn-start"
         >
           Start Conversation
         </button>
         <button
           onClick={stopConversation}
           disabled={conversation.status !== 'connected'}
-          className="px-4 py-2 bg-red-500 text-white rounded disabled:bg-gray-300"
+          className="btn btn-stop"
         >
           Stop Conversation
         </button>
       </div>
-
-      <div className="flex flex-col items-center">
+      <div className="status">
         <p>Status: {conversation.status}</p>
-        <p>Agent is {conversation.isSpeaking ? 'speaking' : 'listening'}</p>
+        <p>{conversation.isSpeaking ? 'Agent is speaking...' : 'Agent is listening...'}</p>
       </div>
     </div>
   );

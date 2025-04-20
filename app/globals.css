@@ -3,6 +3,79 @@
   --foreground: #171717;
 }
 
+/* Custom Styles */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 4rem);
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.conversation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--background);
+  padding: 1.5rem;
+  border: 1px solid var(--foreground);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-start {
+  background-color: #3b82f6;
+}
+
+.btn-start:hover:not(:disabled) {
+  background-color: #60a5fa;
+}
+
+.btn-stop {
+  background-color: #ef4444;
+}
+
+.btn-stop:hover:not(:disabled) {
+  background-color: #f87171;
+}
+
+.status {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--foreground);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
